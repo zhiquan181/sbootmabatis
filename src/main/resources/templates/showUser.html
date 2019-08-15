@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p th:text="${user}"/>
+
+    <span th:text="${user.id}"/><br/>
+    <span th:text="${user.username}"/><br/>
+    <span th:text="${user.password}"/><br/>
+    <span th:text="${user.age}"/>
+
+    <h5 th:text="${user.getId()}+' '+${user.getUsername()}+' '+${user.getPassword()}+' '+${user.getAge()}"/>
+
+    <a href="/home/showUsers">显示所有用户</a>
+</body>
+</html>

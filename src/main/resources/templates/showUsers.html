@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>所有用户</title>
+</head>
+<body>
+    <!-- <p th:text="${users}" /> -->
+
+    <ul th:each="user:${userList}">
+        <li>
+            <span th:text="${user.getId()}+' '+${user.getUsername()}+' '+${user.getPassword()}+' '+${user.getAge()}"></span>
+            <a th:href="@{'/home/showUser/'+${user.getId()}}" th:text="详情"></a>
+            <a th:href="@{'/home/ToupdateUser?id='+${user.getId()}}" th:text="修改"></a>
+            <a th:href="@{'/home/deleteUser?id='+${user.getId()}}" th:text="删除"></a>
+        </li>
+    </ul>
+
+    <a href="/home/ToinsertUser">新增用户</a>
+</body>
+</html>
